@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "export-pdf": "node scripts/export-pdf.mjs"
+    "export-pdf": "node scripts/export-pdf.mjs",
+    "images:webp": "node scripts/convert-webp.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",
@@ -21,6 +22,7 @@
     "@vitejs/plugin-react": "^6.0.5",
     "oxlint": "^1.79.0",
     "playwright": "^1.62.1",
+    "sharp": "^0.35.3",
     "typescript": "^7.0.2",
     "vite": "^8.2.1"
   }
