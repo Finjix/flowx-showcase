@@ -54,7 +54,7 @@ export default function AgentSection() {
         </article>
 
         <div className="agent-shot reveal">
-          <Placeholder title="Agent 小奈" src="/projects/agent.png" />
+          <Placeholder title="Agent 小奈" src="/image/agent.webp" />
         </div>
       </div>
     </section>

@@ -61,8 +61,6 @@ export interface SceneRole {
   text: string;
 }
 
-export const RESUME_URL = "/projects/张喆涵-27校招.pdf";
-
 export const NAV: NavItem[] = [
   { href: "#background", label: "项目背景" },
   { href: "#main-case", label: "旗舰项目" },
@@ -112,20 +110,20 @@ export const MAIN_RESULTS: StatItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
-  { no: "01", title: "AI 分镜助手", desc: "智能拆解脚本，自由参数控制", tags: ["AI 分镜", "视频生成", "异步任务"], image: "/projects/分镜.png" },
-  { no: "02", title: "H5 组件生成", desc: "多样性组件产出", tags: ["生成即成品", "布局匹配", "风格跟随"], image: "/projects/H5.png" },
-  { no: "03", title: "可视化节点画布", desc: "一整条创作，装进一块画布", tags: ["节点编排", "状态持久化", "工作流"], image: "/projects/无限画布.png" },
-  { no: "04", title: "智能扩图与局部重绘", desc: "扩图与重绘，像素级可控", tags: ["Inpaint", "Mask", "任务恢复"], image: "/projects/智能扩图.png" },
-  { no: "05", title: "角色三视图生成", desc: "一键批量生成，三视图一次出齐", tags: ["一致性", "批量生成", "失败兜底"], image: "/projects/角色三视图.png" },
-  { no: "06", title: "Logo 创作模块", desc: "内置六大风格模板，一次完成品牌延展", tags: ["配套延展", "多尺寸", "多模型"], image: "/projects/logo.png" },
-  { no: "07", title: "模板替换", desc: "一套模板，出一整批成品", tags: ["智能匹配", "批量成品", "规格输出"], image: "/projects/模板替换.png" },
-  { no: "08", title: "智能定妆照", desc: "内置定妆照生成、定妆照三视图、人像换衣等多张板块", tags: ["质感保留", "批量处理", "肤色矫正"], image: "/projects/定妆照.png" },
+  { no: "01", title: "AI 分镜助手", desc: "智能拆解脚本，自由参数控制", tags: ["AI 分镜", "视频生成", "异步任务"], image: "/image/分镜.webp" },
+  { no: "02", title: "H5 组件生成", desc: "多样性组件产出", tags: ["生成即成品", "布局匹配", "风格跟随"], image: "/image/H5.webp" },
+  { no: "03", title: "可视化节点画布", desc: "一整条创作，装进一块画布", tags: ["节点编排", "状态持久化", "工作流"], image: "/image/无限画布.webp" },
+  { no: "04", title: "智能扩图与局部重绘", desc: "扩图与重绘，像素级可控", tags: ["Inpaint", "Mask", "任务恢复"], image: "/image/智能扩图.webp" },
+  { no: "05", title: "角色三视图生成", desc: "一键批量生成，三视图一次出齐", tags: ["一致性", "批量生成", "失败兜底"], image: "/image/角色三视图.webp" },
+  { no: "06", title: "Logo 创作模块", desc: "内置六大风格模板，一次完成品牌延展", tags: ["配套延展", "多尺寸", "多模型"], image: "/image/logo.webp" },
+  { no: "07", title: "模板替换", desc: "一套模板，出一整批成品", tags: ["智能匹配", "批量成品", "规格输出"], image: "/image/模板替换.webp" },
+  { no: "08", title: "智能定妆照", desc: "内置定妆照生成、定妆照三视图、人像换衣等多张板块", tags: ["质感保留", "批量处理", "肤色矫正"], image: "/image/定妆照.webp" },
 ];
 
 export const DYNAMIC_GIF_COLS: string[][] = [
-  ["/projects/gif1.gif"],
-  ["/projects/gif2.gif"],
-  ["/projects/gif3.gif", "/projects/华为_216x216.gif"],
+  ["/image/gif1.webp"],
+  ["/image/gif2.webp"],
+  ["/image/gif3.webp", "/image/华为_216x216.webp"],
 ];
 
 export const SIMPLIFY_LANES: SimplifyLane[] = [
@@ -170,7 +168,7 @@ export const REPEAT_CASES: RepeatCase[] = [
     note: "历年管线实战，约减少",
     stat: "83%",
     after: "人力处理投入",
-    images: ["/projects/定妆照界面.png", "/projects/定妆照展示.png"],
+    images: ["/image/定妆照界面.webp", "/image/定妆照展示.webp"],
   },
   {
     title: "Logo 智能延展",
@@ -178,14 +176,14 @@ export const REPEAT_CASES: RepeatCase[] = [
     stat: "80%",
     extra: "提效 400%",
     note: "机械操作耗时减少",
-    images: ["/projects/logo延展1.png", "/projects/logo延展2.png"],
+    images: ["/image/logo延展1.webp", "/image/logo延展2.webp"],
   },
   {
     title: "多渠道资源位",
     flow: "裁切 / 压缩 / 转格式 / 命名 → 专业效率管线 → 算法智能处理",
     stat: "50%",
     note: "多环节操作封装为自动化流程，提效",
-    images: ["/projects/资源位1.png", "/projects/资源位2.png"],
+    images: ["/image/资源位1.webp", "/image/资源位2.webp"],
   },
 ];
 

@@ -27,7 +27,7 @@ npm run preview    # 预览构建产物
 
 ```bash
 npm run dev        # 默认端口 5173
-npm run export-pdf # 导出 PDF 到 public/projects/
+npm run export-pdf # 导出 PDF 到 public/image/
 ```
 
 可通过 `SITE_URL` 环境变量指定站点地址（默认 `http://localhost:5177/`）。

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NAV, RESUME_URL } from "../data/content";
+import { NAV } from "../data/content";
 
 /**
  * 顶部导航 — 滚动后加深背景
@@ -18,7 +18,6 @@ export default function Nav() {
       <div className="nav-links">
         {NAV.map((item) => <a href={item.href} key={item.href}>{item.label}</a>)}
       </div>
-      <a className="nav-contact" href={RESUME_URL} download>下载简历 ↗</a>
     </nav>
   );
 }

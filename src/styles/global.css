@@ -66,7 +66,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .nav-links { display: flex; gap: 30px; }
 .nav-links a { color: var(--muted); font-size: 12px; transition: color .2s; }
 .nav-links a:hover { color: var(--text); }
-.nav-contact { border: 1px solid rgba(23,226,153,.25); border-radius: 999px; padding: 9px 15px; font-size: 12px; color: var(--green); }
 
 /* hero */
 .hero { min-height: 100vh; padding: 0; position: relative; overflow: hidden; text-align: center; background: #050705; }
@@ -307,14 +306,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .split-case { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; padding: 120px 0; border-bottom: 1px solid var(--line); }
 .split-shots { display: flex; flex-direction: column; gap: 12px; }
 .split-shots .placeholder.filled.tall { min-height: 0; height: auto; }
-.gif-showcase {
+.anim-showcase {
   padding: 48px 0 100px;
   border-bottom: 1px solid var(--line);
 }
-.gif-row { display: grid; gap: 16px; }
-.gif-row.main { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
-.gif-row img { width: 100%; height: auto; display: block; }
-.gif-stack { display: flex; flex-direction: column; gap: 12px; }
+.anim-row { display: grid; gap: 16px; }
+.anim-row.main { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+.anim-row img { width: 100%; height: auto; display: block; }
+.anim-stack { display: flex; flex-direction: column; gap: 12px; }
 .split-copy > p { color: var(--muted); line-height: 1.85; font-size: 14px; margin: 28px 0; }
 .split-copy h2 { margin-top: 18px; }
 .mini-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -356,7 +355,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 680px) {
   .container { width: min(100% - 32px, var(--container)); }
-  .nav { height: 62px; padding: 0 16px; }.nav-contact { padding: 8px 11px; }
+  .nav { height: 62px; padding: 0 16px; }
   .hero { padding: 0; }.hero-inner { padding-top: 22vh; }.hero h1 { font-size: 42px; }.hero-planet { height: 42vh; }.hero-cta { padding: 12px 24px; font-size: 12px; }
   .bg-sec { padding: 96px 0; }.bg-title { font-size: 30px; }.bg-facts { grid-template-columns: 1fr; }.bg-facts > div { min-height: auto; gap: 7px; }.bg-facts > div + div { border-left: 0; border-top: 1px solid var(--line-soft); }
   .case-cover { padding-bottom: 64px; }

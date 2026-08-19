@@ -48,7 +48,7 @@ export default function HeroSection() {
           <div className="bg-shot reveal">
             <figure className="shot3d">
               <div className="shot3d-glow" />
-              <div className="shot3d-frame"><img src="/platform-home.png" alt="FlowX 内容制作中心首页" /></div>
+              <div className="shot3d-frame"><img src="/image/platform-home.webp" alt="FlowX 内容制作中心首页" /></div>
               <div className="shot3d-shadow" />
               <figcaption>内容制作中心 · AI 应用平台 <span>V1.5.0</span></figcaption>
             </figure>

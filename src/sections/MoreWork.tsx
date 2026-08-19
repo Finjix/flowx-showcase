@@ -1,6 +1,6 @@
 import SimplifyProd from "./dynamic/SimplifyProd";
 import Placeholder from "../components/Placeholder";
-import { DYNAMIC_GIF_COLS, PROJECTS, RESUME_URL, STRENGTHS } from "../data/content";
+import { DYNAMIC_GIF_COLS, PROJECTS, STRENGTHS } from "../data/content";
 import SceneFuture from "./SceneFuture";
 
 /**
@@ -24,15 +24,15 @@ export default function MoreWork() {
               </div>
               <div className="case-tags"><span>模板参数化</span><span>批量任务</span><span>多规格导出</span></div>
             </div>
-            <Placeholder title="动态生成图片集合包" ratio="tall" src="/projects/图片集合包.png" />
+            <Placeholder title="动态生成图片集合包" ratio="tall" src="/image/图片集合包.webp" />
           </article>
 
           <SimplifyProd />
 
-          <div className="gif-showcase reveal">
-            <div className="gif-row main">
+          <div className="anim-showcase reveal">
+            <div className="anim-row main">
               {DYNAMIC_GIF_COLS.map((col, colIndex) => (
-                <div className={col.length > 1 ? "gif-stack" : undefined} key={colIndex}>
+                <div className={col.length > 1 ? "anim-stack" : undefined} key={colIndex}>
                   {col.map((src, index) => (
                     <img key={src} src={src} alt={`动态生成案例 ${colIndex + 1}-${index + 1}`} />
                   ))}
@@ -42,7 +42,7 @@ export default function MoreWork() {
           </div>
 
           <article className="split-case reverse reveal">
-            <Placeholder title="素材管理界面" note="建议替换：角色、渠道骨架、字效资产库" ratio="tall" src="/projects/资产库.png" />
+            <Placeholder title="素材管理界面" note="建议替换：角色、渠道骨架、字效资产库" ratio="tall" src="/image/资产库.webp" />
             <div className="split-copy">
               <span className="eyebrow">SUB CASE 03 · 素材管理</span>
               <h2>把素材变成<br /><span>可复用资产</span></h2>
@@ -90,7 +90,6 @@ export default function MoreWork() {
         <div className="footer-glow" />
         <div className="container footer-inner reveal">
           <h2>让 AI 效率<br /><em>融入生产系统</em></h2>
-          <a href={RESUME_URL} download>下载简历 ↗</a>
           <div className="footer-bottom"><span>张喆涵项目作品集</span><span>FLOWX / 2026</span></div>
         </div>
       </footer>
