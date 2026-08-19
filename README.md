@@ -61,7 +61,7 @@ npm run dev
 npm run export-pdf   # 导出到 public/image/flowx-showcase.pdf
 ```
 
-可通过 `SITE_URL` 环境变量指定站点地址（默认 `http://localhost:5177/`）。
+可通过 `SITE_URL` 环境变量指定站点地址（默认 `http://localhost:5177/flowx-showcase/`）。
 
 ## 目录结构
 

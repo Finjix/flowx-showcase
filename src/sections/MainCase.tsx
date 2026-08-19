@@ -2,6 +2,7 @@ import ChapterHead from "../components/ChapterHead";
 import CompareMatrix from "../components/CompareMatrix";
 import FlowLane from "../components/FlowLane";
 import Placeholder from "../components/Placeholder";
+import { assetPath } from "../utils/assetPath";
 import {
   AI_COMPARE,
   CASE_RESULT,
@@ -93,8 +94,8 @@ export default function MainCase() {
             ))}
           </div>
           <div className="case-shots">
-            <Placeholder title="游戏回流营销素材生产" src="/image/游戏回流.webp" />
-            <Placeholder title="游戏回流生成预览" src="/image/游戏回流2.webp" />
+            <Placeholder title="游戏回流营销素材生产" src={assetPath("image/游戏回流.webp")} />
+            <Placeholder title="游戏回流生成预览" src={assetPath("image/游戏回流2.webp")} />
           </div>
         </article>
       </div>

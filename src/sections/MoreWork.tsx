@@ -1,6 +1,7 @@
 import SimplifyProd from "./dynamic/SimplifyProd";
 import Placeholder from "../components/Placeholder";
 import { DYNAMIC_GIF_COLS, PROJECTS, STRENGTHS } from "../data/content";
+import { assetPath } from "../utils/assetPath";
 import SceneFuture from "./SceneFuture";
 
 /**
@@ -24,7 +25,7 @@ export default function MoreWork() {
               </div>
               <div className="case-tags"><span>模板参数化</span><span>批量任务</span><span>多规格导出</span></div>
             </div>
-            <Placeholder title="动态生成图片集合包" ratio="tall" src="/image/图片集合包.webp" />
+            <Placeholder title="动态生成图片集合包" ratio="tall" src={assetPath("image/图片集合包.webp")} />
           </article>
 
           <SimplifyProd />
@@ -42,7 +43,7 @@ export default function MoreWork() {
           </div>
 
           <article className="split-case reverse reveal">
-            <Placeholder title="素材管理界面" note="建议替换：角色、渠道骨架、字效资产库" ratio="tall" src="/image/资产库.webp" />
+            <Placeholder title="素材管理界面" note="建议替换：角色、渠道骨架、字效资产库" ratio="tall" src={assetPath("image/资产库.webp")} />
             <div className="split-copy">
               <span className="eyebrow">SUB CASE 03 · 素材管理</span>
               <h2>把素材变成<br /><span>可复用资产</span></h2>

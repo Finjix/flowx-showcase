@@ -1,6 +1,7 @@
 import ArchDiagram from "./ArchDiagram";
 import Placeholder from "../Placeholder";
 import { AGENT_NOW, AGENT_PAST } from "../../data/content";
+import { assetPath } from "../../utils/assetPath";
 import "./agent.css";
 
 /**
@@ -54,7 +55,7 @@ export default function AgentSection() {
         </article>
 
         <div className="agent-shot reveal">
-          <Placeholder title="Agent 小奈" src="/image/agent.webp" />
+          <Placeholder title="Agent 小奈" src={assetPath("image/agent.webp")} />
         </div>
       </div>
     </section>
