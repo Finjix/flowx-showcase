@@ -5,7 +5,7 @@ import path from "node:path";
 const url = process.env.SITE_URL ?? "http://localhost:5177/";
 const outFile = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
-  "../public/image/flowx-showcase.pdf"
+  "../pdf/flowx-showcase.pdf"
 );
 
 const browser = await chromium.launch();
