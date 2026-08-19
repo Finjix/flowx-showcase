@@ -1,4 +1,5 @@
 import { chromium } from "playwright";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
@@ -33,7 +34,6 @@ await page.addStyleTag({
         display: none !important;
       }
       .case-cover,
-      .chapter,
       .chapter-head,
       .pain-grid,
       .flow-stack,
@@ -76,25 +76,12 @@ await page.addStyleTag({
 
       /* Keep the PDF aligned to the portfolio's visual chapters. */
       .main-case .chapter {
-        break-before: page;
         padding: 64px 0;
       }
       .main-case .chapter-head {
         margin-bottom: 40px;
       }
-      .main-case .compare-matrix + .compare-matrix {
-        break-before: page;
-        padding-top: 64px;
-      }
-      .guard-band + .guard-band,
-      .repeat {
-        break-before: page;
-      }
-      .guard-band + .guard-band {
-        margin-top: 64px;
-      }
       .agent {
-        break-before: page;
         padding: 72px 0;
       }
       .agent-case {
@@ -129,12 +116,23 @@ await page.addStyleTag({
       .agent-past {
         margin-top: 32px;
       }
-      .agent-shot,
-      .sub-cases,
-      .projects,
-      .strengths,
-      .scene {
-        break-before: page;
+      .repeat {
+        margin-top: 32px;
+        padding-top: 24px;
+      }
+      .repeat-head {
+        margin-bottom: 18px;
+      }
+      .repeat-compare {
+        margin-bottom: 12px;
+      }
+      .repeat-card {
+        padding: 14px 14px 12px;
+      }
+      .repeat-foot {
+        margin-top: 10px;
+        padding: 10px 14px;
+        font-size: 12px;
       }
       .sub-cases {
         padding: 64px 0;
@@ -143,13 +141,13 @@ await page.addStyleTag({
         padding: 48px 0;
       }
       .sub-cases .simplify {
-        break-before: page;
         break-inside: avoid;
         page-break-inside: avoid;
       }
-      .sub-cases .anim-showcase,
-      .sub-cases .split-case.reverse {
+      .sub-cases .section-kicker,
+      .projects .section-kicker {
         break-before: page;
+        page-break-before: always;
       }
       .scene {
         padding: 64px 0;
@@ -237,6 +235,46 @@ await page.pdf({
   width: `${pdfWidth}px`,
   height: `${pdfHeight}px`,
   margin: { top: "0", right: "0", bottom: "0", left: "0" },
+});
+
+const runtimeRoot = path.join(
+  process.env.USERPROFILE ?? "",
+  ".cache",
+  "codex-runtimes",
+  "codex-primary-runtime",
+  "dependencies",
+);
+const pythonPath =
+  process.env.FLOWX_PDF_PYTHON ?? path.join(runtimeRoot, "python", "python.exe");
+const rendererPath =
+  process.env.FLOWX_PDFTOPPM ??
+  path.join(runtimeRoot, "native", "poppler", "Library", "bin", "pdftoppm.exe");
+const trimmedFile = `${outFile}.trimmed`;
+const trimResult = spawnSync(
+  pythonPath,
+  [
+    path.join(path.dirname(fileURLToPath(import.meta.url)), "crop-pdf.py"),
+    outFile,
+    trimmedFile,
+    "--renderer",
+    rendererPath,
+  ],
+  {
+    encoding: "utf8",
+    env: { ...process.env, PYTHONIOENCODING: "utf-8" },
+  },
+);
+
+if (trimResult.status !== 0) {
+  console.error(trimResult.stdout);
+  console.error(trimResult.stderr);
+  throw new Error("PDF 页面裁切失败");
+}
+
+console.log(trimResult.stdout.trim());
+await import("node:fs/promises").then(async ({ copyFile, unlink }) => {
+  await copyFile(trimmedFile, outFile);
+  await unlink(trimmedFile);
 });
 
 await browser.close();
