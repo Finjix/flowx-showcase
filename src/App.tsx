@@ -1,4 +1,5 @@
 import AgentSection from "./components/agent/AgentSection";
+import Lightbox from "./components/Lightbox";
 import Nav from "./components/Nav";
 import { useReveal } from "./hooks/useReveal";
 import Guardrails from "./sections/Guardrails";
@@ -21,6 +22,7 @@ export default function App() {
         <AgentSection />
         <MoreWork />
       </main>
+      <Lightbox />
     </div>
   );
 }

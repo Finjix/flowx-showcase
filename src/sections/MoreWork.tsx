@@ -90,7 +90,7 @@ export default function MoreWork() {
         <div className="footer-glow" />
         <div className="container footer-inner reveal">
           <h2>让 AI 效率<br /><em>融入生产系统</em></h2>
-          <div className="footer-bottom"><span>张喆涵项目作品集</span><span>FLOWX / 2026</span></div>
+          <div className="footer-bottom"><span>钟丰骏项目作品集</span><span>FLOWX / 2026</span></div>
         </div>
       </footer>
     </>

@@ -1,13 +1,12 @@
 # Flowx Showcase
 
-张喆涵的项目作品集站点 —— 展示 FlowX 游戏营销素材生产平台等 AI 产品项目案例。
+钟丰骏的项目作品集站点 —— 展示 FlowX 游戏营销素材生产平台等 AI 产品项目案例。
 
 ## 技术栈
 
 - **React 19 + Vite 8** — 前端框架与构建工具
 - **TypeScript 7** — 严格模式类型检查
 - **原生 CSS** — 无 UI 框架，样式按区块拆分
-- **oxlint** — 代码检查（替代 ESLint）
 - **Playwright** — 无头浏览器 PDF 导出
 - **sharp** — 图片格式转换（PNG/GIF → WebP）
 
@@ -16,7 +15,6 @@
 ```bash
 npm install        # 安装依赖
 npm run dev        # 启动开发服务器（http://localhost:5173）
-npm run lint       # 代码检查（oxlint）
 npm run typecheck  # 类型检查（tsc --noEmit）
 npm run build      # 类型检查 + 生产构建（输出到 dist/）
 npm run preview    # 本地预览构建产物

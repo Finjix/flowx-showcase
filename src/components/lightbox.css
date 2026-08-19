@@ -1,0 +1,139 @@
+/* ============ 图片灯箱 ============ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3, 6, 4, 0.93);
+  backdrop-filter: blur(12px);
+  cursor: zoom-out;
+  animation: lb-fade 0.25s ease;
+}
+.lightbox.closing {
+  animation: lb-fade-out 0.22s ease forwards;
+}
+
+/* 页面内所有图片悬停提示可点击 */
+#root img {
+  cursor: zoom-in;
+}
+
+.lightbox-stage {
+  max-width: min(92vw, 1600px);
+  max-height: 88vh;
+  cursor: default;
+  animation: lb-zoom 0.32s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.lightbox.closing .lightbox-stage {
+  animation: lb-zoom-out 0.22s ease forwards;
+}
+.lightbox-stage img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 86vh;
+  border-radius: 8px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
+  user-select: none;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(6px);
+}
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+.lightbox-close:active,
+.lightbox-nav:active {
+  transform: scale(0.94);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+  padding-bottom: 4px;
+}
+.lightbox-nav.prev { left: 20px; }
+.lightbox-nav.next { right: 20px; }
+
+.lightbox-count {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80vw;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 动画 */
+@keyframes lb-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes lb-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@keyframes lb-zoom {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes lb-zoom-out {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.94); }
+}
+
+/* 窄屏：导航按钮移入边缘 */
+@media (max-width: 640px) {
+  .lightbox-nav.prev { left: 8px; }
+  .lightbox-nav.next { right: 8px; }
+}
