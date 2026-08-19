@@ -63,24 +63,26 @@ export default function MainCase() {
 
         <article className="chapter">
           <ChapterHead eyebrow="系统蓝图" title="企业规则，" highlight="就是产品壁垒" />
-          <div className="system-map reveal">
-            <div className="system-inputs">
-              <span>业务规则</span><span>内容策略</span><span>渠道规格</span><span>品牌资产</span>
-            </div>
-            <div className="system-engine">
-              <div className="engine-title"><b>FLOWX 生产引擎</b><span>把模型能力封装为稳定交付</span></div>
-              <div className="engine-layers">
-                <div><span>策略</span><b>614 条场景策略</b><small>规则化选题与提示词</small></div>
-                <div><span>生成</span><b>成本平衡策略</b><small>质量匹配与版本生成</small></div>
-                <div><span>体验</span><b>收敛智能参数</b><small>解决「调参难、易失败」痛点</small></div>
-                <div><span>任务</span><b>状态与恢复</b><small>失败兜底、续跑、交付</small></div>
+          <div className="system-map-group">
+            <div className="system-map reveal">
+              <div className="system-inputs">
+                <span>业务规则</span><span>内容策略</span><span>渠道规格</span><span>品牌资产</span>
               </div>
+              <div className="system-engine">
+                <div className="engine-title"><b>FLOWX 生产引擎</b><span>把模型能力封装为稳定交付</span></div>
+                <div className="engine-layers">
+                  <div><span>策略</span><b>614 条场景策略</b><small>规则化选题与提示词</small></div>
+                  <div><span>生成</span><b>成本平衡策略</b><small>质量匹配与版本生成</small></div>
+                  <div><span>体验</span><b>收敛智能参数</b><small>解决「调参难、易失败」痛点</small></div>
+                  <div><span>任务</span><b>状态与恢复</b><small>失败兜底、续跑、交付</small></div>
+                </div>
+              </div>
+              <div className="system-outputs"><span>可投放成品</span><span>64 种渠道规格</span><span>分层路由策略</span><span>可追踪任务</span></div>
             </div>
-            <div className="system-outputs"><span>可投放成品</span><span>64 种渠道规格</span><span>分层路由策略</span><span>可追踪任务</span></div>
-          </div>
-          <div className="value-strip reveal">
-            <span>差异化价值</span>
-            <p>可按企业资产、渠道与业务规则配置，复用到各个方向</p>
+            <div className="value-strip reveal">
+              <span>差异化价值</span>
+              <p>可按企业资产、渠道与业务规则配置，复用到各个方向</p>
+            </div>
           </div>
         </article>
 
