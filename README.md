@@ -7,7 +7,6 @@
 - **React 19 + Vite 8** — 前端框架与构建工具
 - **TypeScript 7** — 严格模式类型检查
 - **原生 CSS** — 无 UI 框架，样式按区块拆分
-- **Playwright** — 无头浏览器 PDF 导出
 - **sharp** — 图片格式转换（PNG/GIF → WebP）
 
 ## 快速开始
@@ -52,17 +51,6 @@ npm run images:webp -- public/image --lossless --output dist/image  # 全部无�
 
 > 提示：`public/image/` 下的 `gif1/gif2/gif3.webp` 等文件名保留历史命名，实际已是 WebP 格式。
 
-## PDF 导出
-
-启动开发服务器后，用 Playwright 将整页渲染为 PDF：
-
-```bash
-npm run dev
-npm run export-pdf   # 导出到 public/image/flowx-showcase.pdf
-```
-
-可通过 `SITE_URL` 环境变量指定站点地址（默认 `http://localhost:5177/flowx-showcase/`）。
-
 ## 目录结构
 
 ```
@@ -70,7 +58,6 @@ npm run export-pdf   # 导出到 public/image/flowx-showcase.pdf
 ├── vite.config.ts          # Vite 配置
 ├── tsconfig.json           # TypeScript 配置
 ├── scripts/
-│   ├── export-pdf.mjs      # PDF 导出脚本（Playwright）
 │   └── convert-webp.mjs    # 图片转 WebP 脚本（sharp）
 ├── public/
 │   └── image/              # 站点图片资源（全部 WebP）
