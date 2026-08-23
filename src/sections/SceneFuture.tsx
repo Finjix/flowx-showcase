@@ -1,20 +1,20 @@
 import { SCENE_ROLES } from "../data/content";
 import "./scene-future.css";
 
-const LOOP_TOP = ["真实需求", "投入使用"];
-const LOOP_BOT = ["建设能力", "用起来", "收集反馈", "打磨迭代"];
+const LOOP_TOP = ["创意目标", "发布 / 测试"];
+const LOOP_BOT = ["拆解需求", "生成初稿", "人工质检", "沉淀复用"];
 
 /**
- * 场景与未来 — 从做功能到做闭环，以及谁在用
+ * 协作场景 — 从内容目标到反馈复用，以及谁在用
  */
 export default function SceneFuture() {
   return (
     <section className="scene section-pad" id="scene">
       <div className="container">
         <header className="scene-head reveal">
-          <span className="scene-kicker">SCENE & FUTURE · 谁在用 · 会长成什么</span>
-          <h2>从「做功能」到「做闭环」</h2>
-          <p>需求驱动建设，反馈反哺迭代</p>
+          <span className="scene-kicker">COLLABORATION · 内容、美术与运营</span>
+          <h2>让内容生产形成可迭代闭环</h2>
+          <p>创意目标驱动生产，真实反馈反哺 Prompt、模板与素材资产。</p>
         </header>
 
         <div className="loop-board reveal">
@@ -27,7 +27,7 @@ export default function SceneFuture() {
               <div className="loop-node" key={step}>{step}</div>
             ))}
           </div>
-          <p className="loop-caption"><b>让平台越用越贴合业务</b>——铺好的能力，靠循环持续进化</p>
+          <p className="loop-caption"><b>让每次交付都沉淀下一次的起点</b>——有效方法进入资产库，反馈继续推动迭代。</p>
         </div>
 
         <div className="scene-roles reveal">

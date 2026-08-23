@@ -5,7 +5,7 @@ import { useReveal } from "./hooks/useReveal";
 import Guardrails from "./sections/Guardrails";
 import HeroSection from "./sections/HeroSection";
 import MainCase from "./sections/MainCase";
-import MoreWork from "./sections/MoreWork";
+import { ContentTemplates, PortfolioClose, SelectedProjects } from "./sections/MoreWork";
 
 /**
  * 作品集根组件 — 组装各区块
@@ -17,10 +17,12 @@ export default function App() {
       <Nav />
       <main>
         <HeroSection />
+        <SelectedProjects />
         <MainCase />
+        <ContentTemplates />
         <Guardrails />
         <AgentSection />
-        <MoreWork />
+        <PortfolioClose />
       </main>
       <Lightbox />
     </div>

@@ -14,15 +14,15 @@ import {
 } from "../data/content";
 
 /**
- * 旗舰项目 — 回流营销素材生产
+ * 代表案例 — 回流 AI 营销素材生产
  */
 export default function MainCase() {
   return (
     <section className="main-case section-pad" id="main-case">
       <div className="container">
         <div className="case-cover reveal">
-          <span className="case-eyebrow">旗舰项目｜游戏回流营销素材生产</span>
-          <h2 className="case-title">分钟级产出效率，<em>生成即投放</em></h2>
+          <span className="case-eyebrow">代表案例｜游戏回流 AI 营销素材</span>
+          <h2 className="case-title">用 Prompt 与素材模板，<em>生产可投放内容</em></h2>
           <div className="case-result">
             {CASE_RESULT.map((item) => (
               <div className="case-res" key={item.label}>
@@ -34,7 +34,7 @@ export default function MainCase() {
         </div>
 
         <article className="chapter">
-          <ChapterHead eyebrow="业务痛点" title="耗尽工时，" highlight="换不来质量" />
+          <ChapterHead eyebrow="创作挑战" title="创意、质量与交付，" highlight="不能只顾一头" />
           <div className="pain-grid reveal">
             {PAINS.map((pain) => (
               <div className="pain-card" key={pain.no}>
@@ -46,48 +46,48 @@ export default function MainCase() {
         </article>
 
         <article className="chapter">
-          <ChapterHead eyebrow="流程重构" title="从经验交付，" highlight="到规则驱动" />
+          <ChapterHead eyebrow="内容拆解" title="把隐性经验，" highlight="写进内容管线" />
           <div className="flow-stack reveal">
-            <FlowLane title="过去 · 依赖人" tone="old" items={OLD_FLOW} />
-            <FlowLane title="现在 · 系统承接" tone="new" items={NEW_FLOW} />
+            <FlowLane title="过去 · 人工串流程" tone="old" items={OLD_FLOW} />
+            <FlowLane title="现在 · 模板化生产" tone="new" items={NEW_FLOW} />
           </div>
         </article>
 
         <article className="chapter">
-          <ChapterHead eyebrow="价值对比" title="同样是 AI，" highlight="差在交付" />
+          <ChapterHead eyebrow="生产方式" title="同样是 AI，" highlight="差在内容能否交付" />
           <div className="compare-stack">
-            <CompareMatrix title="解决人工瓶颈" left="人工流程" right="FlowX" rows={HUMAN_COMPARE} conclusion="人力扩产 → 系统扩产" />
-            <CompareMatrix title="跨过通用 AI 的最后一公里" left="通用 AI" right="FlowX" rows={AI_COMPARE} conclusion="生成图片 → 交付成品" />
+            <CompareMatrix title="从人工协作到模板化生产" left="人工串流程" right="内容生产管线" rows={HUMAN_COMPARE} conclusion="反复对齐 → 标准化协作" />
+            <CompareMatrix title="从通用生成到可发布内容" left="通用 AI" right="FlowX" rows={AI_COMPARE} conclusion="可看初稿 → 可投放内容" />
           </div>
         </article>
 
         <article className="chapter">
-          <ChapterHead eyebrow="系统蓝图" title="企业规则，" highlight="就是产品壁垒" />
+          <ChapterHead eyebrow="内容生产管线" title="把内容标准，" highlight="写进每次生成" />
           <div className="system-map-group">
             <div className="system-map reveal">
               <div className="system-inputs">
-                <span>业务规则</span><span>内容策略</span><span>渠道规格</span><span>品牌资产</span>
+                <span>内容目标</span><span>平台语境</span><span>参考素材</span><span>品牌与渠道规范</span>
               </div>
               <div className="system-engine">
-                <div className="engine-title"><b>FLOWX 生产引擎</b><span>把模型能力封装为稳定交付</span></div>
+                <div className="engine-title"><b>FLOWX 内容生产管线</b><span>把创意要求拆成模型可执行、团队可验收的生产标准</span></div>
                 <div className="engine-layers">
-                  <div><span>策略</span><b>614 条场景策略</b><small>规则化选题与提示词</small></div>
-                  <div><span>生成</span><b>成本平衡策略</b><small>质量匹配与版本生成</small></div>
-                  <div><span>体验</span><b>收敛智能参数</b><small>解决「调参难、易失败」痛点</small></div>
-                  <div><span>任务</span><b>状态与恢复</b><small>失败兜底、续跑、交付</small></div>
+                  <div><span>拆解</span><b>需求与内容目标</b><small>受众、卖点、平台与规格</small></div>
+                  <div><span>Prompt</span><b>结构化生成约束</b><small>风格、构图、角色与文案区</small></div>
+                  <div><span>生成</span><b>多参考与 A/B</b><small>批量生成、单张重试</small></div>
+                  <div><span>验收</span><b>质量与任务状态</b><small>人工质检、失败恢复、终稿交付</small></div>
                 </div>
               </div>
-              <div className="system-outputs"><span>可投放成品</span><span>64 种渠道规格</span><span>分层路由策略</span><span>可追踪任务</span></div>
+              <div className="system-outputs"><span>可投放成品</span><span>多渠道规格</span><span>A/B 内容版本</span><span>可追踪任务</span></div>
             </div>
             <div className="value-strip reveal">
-              <span>差异化价值</span>
-              <p>可按企业资产、渠道与业务规则配置，复用到各个方向</p>
+              <span>可复用的不是一次出图</span>
+              <p>而是被验证过的 Prompt 结构、素材组合、渠道模板和验收标准。</p>
             </div>
           </div>
         </article>
 
         <article className="chapter result-chapter">
-          <ChapterHead eyebrow="结果" title="从一次生成，" highlight="到规模化生产" />
+          <ChapterHead eyebrow="交付结果" title="从一张初稿，" highlight="到规模化内容生产" />
           <div className="result-grid reveal">
             {MAIN_RESULTS.map((result) => (
               <div className="result-card" key={result.label}>
