@@ -64,7 +64,7 @@ export interface SceneRole {
 }
 
 export const NAV: NavItem[] = [
-  { href: "#projects", label: "作品精选" },
+  { href: "#projects", label: "模块精选" },
   { href: "#main-case", label: "代表案例" },
   { href: "#sub-cases", label: "模板与资产" },
   { href: "#method", label: "质量方法" },

@@ -10,10 +10,10 @@ export function SelectedProjects() {
     <section className="projects section-pad" id="projects">
       <div className="projects-glow" />
       <div className="container">
-        <div className="section-kicker project-kicker reveal"><span>SELECTED AI CONTENT WORK</span><b>图像、分镜、人物与品牌视觉</b></div>
+        <div className="section-kicker project-kicker reveal"><span>SELECTED AI CONTENT WORK</span></div>
         <header className="project-intro reveal">
           <h2>先看作品，<em>再看生产方法</em></h2>
-          <p>覆盖从创意拆解、视觉生成到内容修正与成品输出，既关注画面质量，也关注内容能否进入真实生产。</p>
+          <p>覆盖从需求拆解、视觉生成到内容修正与成品输出，既关注画面质量，也关注内容能否进入真实生产。</p>
         </header>
         <div className="project-grid">
           {PROJECTS.map((project, index) => (
