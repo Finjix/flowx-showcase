@@ -25,11 +25,12 @@ npm run preview    # 本地预览构建产物
 
 ### 图片转 WebP
 
-`npm run images:webp` 将 PNG / GIF 转换为 WebP：
+`npm run images:webp` 将 PNG / JPG / GIF 转换为 WebP：
 
 | 输入格式 | 转换策略 |
 |---|---|
 | PNG | 无损 WebP（画面零损失，保留透明通道） |
+| JPG | WebP（默认质量 75） |
 | GIF | 动画 WebP（有损 q75，保留帧时序与循环） |
 
 ```bash

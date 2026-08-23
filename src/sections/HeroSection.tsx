@@ -1,5 +1,16 @@
 import HeroCanvas from "../components/HeroCanvas";
 import { assetPath } from "../utils/assetPath";
+import type { CSSProperties } from "react";
+
+const HERO_SHOWCASE_IMAGES = [
+  { src: "image/lunbo/动效制作.webp", alt: "动态素材生成案例" },
+  { src: "image/lunbo/分镜助手2.webp", alt: "AI 分镜助手案例" },
+  { src: "image/lunbo/首页2.webp", alt: "FlowX 平台首页案例" },
+  { src: "image/lunbo/无限画布.webp", alt: "无限画布案例" },
+  { src: "image/lunbo/字体设计.webp", alt: "字体设计案例" },
+  { src: "image/lunbo/h5长图.webp", alt: "H5 长图案例" },
+  { src: "image/lunbo/logo大师1.webp", alt: "Logo 大师案例" },
+];
 
 /**
  * 首屏与项目背景
@@ -30,8 +41,25 @@ export default function HeroSection() {
             </span>
             <span className="line bold">业务的最后一公里</span>
           </h1>
-          <a className="hero-cta" href="#main-case">查看案例</a>
+          <div className="hero-lunbo" role="region" aria-label="FlowX 案例图片展示">
+            <div className="hero-lunbo-track">
+              {HERO_SHOWCASE_IMAGES.map((image, index) => (
+                <div
+                  className="hero-lunbo-card"
+                  key={image.src}
+                  style={{ "--card-angle": `${(360 / HERO_SHOWCASE_IMAGES.length) * index}deg` } as CSSProperties}
+                >
+                  <img src={assetPath(image.src)} alt={image.alt} />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+        <a className="hero-scroll-cue" href="#background" aria-label="向下浏览">
+          <svg className="hero-scroll-cue-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 6v12m0 0 4-4m-4 4-4-4" />
+          </svg>
+        </a>
       </section>
 
       <section className="bg-sec" id="background">

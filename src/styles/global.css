@@ -80,10 +80,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .scribble { position: relative; }.scribble .ellipse { position: absolute; left: 50%; top: 50%; width: 128%; height: 176%; transform: translate(-50%,-50%) rotate(-7deg); overflow: visible; pointer-events: none; color: #fff; opacity: .9; }.scribble .ellipse ellipse { fill: none; stroke: currentColor; stroke-width: 1.15; }
 .scribble-sparks { position: absolute; top: .02em; right: -.5em; color: #fff; font-size: .3em; animation: twinkle 3s ease-in-out infinite; }.scribble-sparks .s2 { font-size: .6em; vertical-align: super; opacity: .85; }
 .hero-spark { position: absolute; z-index: 5; color: rgba(220,245,229,.52); user-select: none; animation: twinkle 3.2s ease-in-out infinite; pointer-events: none; }.hero-spark.plus { font-size: 16px; }.hero-spark.star { color: rgba(23,226,153,.7); font-size: 11px; }
-.hero-cta { margin: 0; padding: 14px 32px; border-radius: 999px; background: #060906; border: 1px solid rgba(255,255,255,.84); color: #fff; font-size: 14px; font-weight: 500; box-shadow: 0 0 0 1px rgba(23,226,153,.14), 0 0 34px 6px rgba(23,226,153,.22), 0 0 90px 18px rgba(23,226,153,.08); transition: .3s; }.hero-cta:hover { transform: translateY(-2px); background: var(--green); color: #04120c; border-color: var(--green); }
+.hero-lunbo { position: relative; z-index: 6; width: 100vw; height: clamp(260px, 27vw, 330px); margin-left: calc(50% - 50vw); overflow: hidden; perspective: 1200px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.hero-lunbo::before { content: ""; position: absolute; z-index: 0; left: 50%; top: 49%; width: clamp(500px, 72vw, 1040px); height: 126px; transform: translate(-50%, -50%) rotateX(66deg); border: 1px solid rgba(23,226,153,.12); border-radius: 50%; box-shadow: 0 0 34px rgba(23,226,153,.1), inset 0 0 34px rgba(23,226,153,.08); pointer-events: none; }
+.hero-lunbo-track { position: absolute; z-index: 1; left: 50%; top: 50%; width: 1px; height: 1px; transform-style: preserve-3d; transform: rotateY(0deg); animation: heroLunboOrbit 72s linear infinite; will-change: transform; }
+.hero-lunbo-card { --orbit-radius: clamp(290px, 31vw, 460px); position: absolute; left: 0; top: 0; width: clamp(190px, 20vw, 300px); aspect-ratio: 16 / 9; padding: 5px; overflow: hidden; transform: translate(-50%, -50%) rotateY(var(--card-angle)) translateZ(var(--orbit-radius)); transform-style: preserve-3d; backface-visibility: hidden; border: 1px solid rgba(177,255,220,.26); border-radius: 16px; background: linear-gradient(145deg, rgba(25,43,34,.82), rgba(4,10,7,.92)); box-shadow: 0 18px 42px rgba(0,0,0,.38), 0 0 28px rgba(23,226,153,.12), inset 0 1px 0 rgba(255,255,255,.14); transition: transform .45s ease, border-color .45s ease, box-shadow .45s ease; }
+.hero-lunbo-card::after { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(255,255,255,.1); border-radius: 11px; pointer-events: none; }
+.hero-lunbo-card img { display: block; width: 100%; height: 100%; border-radius: 11px; object-fit: cover; filter: saturate(.88) contrast(1.04); transition: transform .45s ease, filter .45s ease; }
+.hero-lunbo-card:hover { transform: translate(-50%, -50%) rotateY(var(--card-angle)) translateZ(calc(var(--orbit-radius) + 18px)) scale(1.03); border-color: rgba(23,226,153,.62); box-shadow: 0 24px 54px rgba(0,0,0,.48), 0 0 38px rgba(23,226,153,.2), inset 0 1px 0 rgba(255,255,255,.2); }
+.hero-lunbo-card:hover img { transform: scale(1.025); filter: saturate(1) contrast(1.05); }
+.hero-scroll-cue { position: absolute; z-index: 7; left: 50%; bottom: clamp(28px, 6vh, 64px); display: grid; place-items: center; width: 48px; height: 48px; transform: translateX(-50%); color: rgba(206,255,231,.86); border: 1px solid rgba(177,255,220,.38); border-radius: 50%; background: radial-gradient(circle at 50% 38%, rgba(23,226,153,.12), rgba(4,10,7,.28) 68%); box-shadow: 0 0 24px rgba(23,226,153,.2), inset 0 0 0 5px rgba(23,226,153,.025), inset 0 0 18px rgba(23,226,153,.1); filter: drop-shadow(0 0 12px rgba(23,226,153,.28)); animation: scrollCueFloat 2.4s ease-in-out infinite; transition: color .3s ease, border-color .3s ease, box-shadow .3s ease; }
+.hero-scroll-cue-icon { position: relative; width: 26px; height: 26px; overflow: visible; }
+.hero-scroll-cue-icon path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.hero-scroll-cue:hover { color: var(--green); border-color: rgba(23,226,153,.8); box-shadow: 0 0 30px rgba(23,226,153,.32), inset 0 0 0 5px rgba(23,226,153,.04), inset 0 0 18px rgba(23,226,153,.14); }
 @keyframes glowBreathe { 0%,100% { opacity:.3; transform:translate(-50%,50%) scale(.97,.94); } 50% { opacity:.82; transform:translate(-50%,50%) scale(1.05,1.12); } }
 @keyframes coreDrift { 0%,100% { transform:translateX(-4.5%); opacity:.55; } 50% { transform:translateX(4.5%); opacity:1; } }
 @keyframes twinkle { 0%,100% { opacity:.2; } 50% { opacity:.95; } }
+@keyframes heroLunboOrbit { from { transform: rotateY(0deg); } to { transform: rotateY(-360deg); } }
+@keyframes scrollCueFloat { 0%,100% { opacity:.55; transform:translate(-50%, 0); } 50% { opacity:1; transform:translate(-50%, 7px); } }
 
 /* placeholder */
 .placeholder { position: relative; min-height: 310px; overflow: hidden; border-radius: var(--radius); background: #090d0a; border: 1px solid var(--line); }
@@ -356,7 +369,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 680px) {
   .container { width: min(100% - 32px, var(--container)); }
   .nav { height: 62px; padding: 0 16px; }
-  .hero { padding: 0; }.hero-inner { padding-top: 22vh; }.hero h1 { font-size: 42px; }.hero-planet { height: 42vh; }.hero-cta { padding: 12px 24px; font-size: 12px; }
+  .hero { padding: 0; }.hero-inner { padding-top: 22vh; }.hero h1 { font-size: 42px; }.hero-planet { height: 42vh; }
+  .hero-lunbo { height: 270px; }
+  .hero-lunbo-track { animation-duration: 82s; }
+  .hero-lunbo-card { --orbit-radius: 290px; width: min(58vw, 230px); padding: 4px; border-radius: 14px; }
+  .hero-lunbo-card::after { inset: 4px; border-radius: 10px; }
+  .hero-lunbo-card img { border-radius: 10px; }
   .bg-sec { padding: 96px 0; }.bg-title { font-size: 30px; }.bg-facts { grid-template-columns: 1fr; }.bg-facts > div { min-height: auto; gap: 7px; }.bg-facts > div + div { border-left: 0; border-top: 1px solid var(--line-soft); }
   .case-cover { padding-bottom: 64px; }
   .case-result { grid-template-columns: repeat(2,1fr); }.case-res { min-height: 126px; padding: 20px; }.case-title { font-size: 40px; }
@@ -378,4 +396,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-lunbo-track { animation: none; transform: rotateY(0deg); }
+  .hero-scroll-cue { animation: none; }
 }

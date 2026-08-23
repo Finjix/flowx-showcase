@@ -1,7 +1,7 @@
 /**
  * 图片资源转 WebP 脚本
  *
- * 将 PNG / GIF 转换为 WebP：
+ * 将 PNG / JPG / GIF 转换为 WebP：
  *   - PNG → 无损 WebP（画面零损失，保留透明通道）
  *   - GIF → 动画 WebP（有损 q75，保留帧时序与循环）
  *
@@ -28,7 +28,7 @@ import sharp from "sharp";
 
 const DEFAULT_PATHS = ["public/image"];
 const DEFAULT_QUALITY = 75;
-const EXTENSIONS = new Set([".png", ".gif"]);
+const EXTENSIONS = new Set([".png", ".jpg", ".jpeg", ".gif"]);
 
 // 禁用 libvips 缓存：否则已解码图片的文件句柄会被保留，导致 Windows 上无法删除原文件
 sharp.cache(false);
