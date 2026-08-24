@@ -9,7 +9,7 @@ export default function SimplifyProd() {
     <div className="simplify reveal">
       <header className="simplify-head">
         <span>CONTENT TEMPLATE</span>
-        <h3>从创意要求到可复用模板</h3>
+        <h3>从生产需求到可复用模板</h3>
         <p>把时长、帧率、码率、版式与导出规格写进生产流程</p>
       </header>
 

@@ -1,11 +1,11 @@
 import { SCENE_ROLES } from "../data/content";
 import "./scene-future.css";
 
-const LOOP_TOP = ["创意目标", "发布 / 测试"];
+const LOOP_TOP = ["内容需求", "发布 / 测试"];
 const LOOP_BOT = ["拆解需求", "生成初稿", "人工质检", "沉淀复用"];
 
 /**
- * 协作场景 — 从内容目标到反馈复用，以及谁在用
+ * 协作场景 — 从内容需求到反馈复用，以及谁在用
  */
 export default function SceneFuture() {
   return (
@@ -14,7 +14,7 @@ export default function SceneFuture() {
         <header className="scene-head reveal">
           <span className="scene-kicker">COLLABORATION · 内容、美术与运营</span>
           <h2>让内容生产形成可迭代闭环</h2>
-          <p>创意目标驱动生产，真实反馈反哺 Prompt、模板与素材资产。</p>
+          <p>内容需求驱动生产，真实反馈反哺 Prompt、模板与素材资产。</p>
         </header>
 
         <div className="loop-board reveal">

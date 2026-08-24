@@ -80,7 +80,7 @@ export const CASE_RESULT: StatItem[] = [
 ];
 
 export const PAINS: PainItem[] = [
-  { no: "01", title: "创意要求散落", text: "角色、卖点与渠道规范依赖人工转译", tag: "需求" },
+  { no: "01", title: "生产需求分散", text: "角色、卖点与渠道规范依赖人工转译", tag: "需求" },
   { no: "02", title: "生成结果不稳定", text: "构图、角色、风格和文案区难同时达标", tag: "质量" },
   { no: "03", title: "渠道版本繁多", text: "批量适配、重试与终稿整理消耗大量时间", tag: "交付" },
 ];
@@ -95,7 +95,7 @@ export const HUMAN_COMPARE: [string, string, string][] = [
 ];
 
 export const AI_COMPARE: [string, string, string][] = [
-  ["输入", "一句想法 + 零散素材", "结构化 Prompt + 参考素材 + 渠道规范"],
+  ["输入", "一句需求 + 零散素材", "结构化 Prompt + 参考素材 + 渠道规范"],
   ["输出", "质量波动的可看初稿", "经过质检的可投放内容"],
   ["复用", "每次从零试错", "Prompt、模板与素材资产复用"],
 ];
@@ -113,11 +113,11 @@ export const PROJECTS: ProjectItem[] = [
   { no: "01", title: "AI 分镜助手", desc: "从脚本拆解到分镜初稿，控制画面、镜头与节奏。", tags: ["脚本拆解", "画面构成", "视频前期"], image: assetPath("image/分镜.webp") },
   { no: "02", title: "智能扩图与局部重绘", desc: "围绕构图和主体关系完成扩图、重绘与细节修正。", tags: ["构图控制", "局部重绘", "迭代修正"], image: assetPath("image/智能扩图.webp") },
   { no: "03", title: "角色三视图生成", desc: "用参考图与结构约束批量生成一致的角色视图。", tags: ["角色一致性", "多视角", "批量生成"], image: assetPath("image/角色三视图.webp") },
-  { no: "04", title: "Logo 创作模块", desc: "从六类视觉方向快速生成 Logo 与配套品牌延展。", tags: ["风格探索", "品牌延展", "多尺寸"], image: assetPath("image/logo.webp") },
+  { no: "04", title: "Logo 生成与延展", desc: "从六类视觉方向快速生成 Logo 与配套品牌延展。", tags: ["风格探索", "品牌延展", "多尺寸"], image: assetPath("image/logo.webp") },
   { no: "05", title: "H5 组件生成", desc: "依据 KV 与内容层级生成可落地的长图与组件方案。", tags: ["版式生成", "风格跟随", "成品输出"], image: assetPath("image/H5.webp") },
   { no: "06", title: "智能定妆照", desc: "围绕人物质感、服装与肤色进行批量生成和修正。", tags: ["质感保留", "人物处理", "批量交付"], image: assetPath("image/定妆照.webp") },
   { no: "07", title: "模板替换", desc: "将版式与素材规则沉淀为模板，批量产出渠道成品。", tags: ["内容模板", "素材适配", "规格输出"], image: assetPath("image/模板替换.webp") },
-  { no: "08", title: "可视化节点画布", desc: "把多步内容生成、调整与组合集中在一块创作画布。", tags: ["创作流程", "节点编排", "多步生成"], image: assetPath("image/无限画布.webp") },
+  { no: "08", title: "可视化节点画布", desc: "把多步内容生成、调整与组合集中在统一流程画布。", tags: ["生产流程", "节点编排", "多步生成"], image: assetPath("image/无限画布.webp") },
 ];
 
 export const DYNAMIC_GIF_COLS: string[][] = [
@@ -133,14 +133,14 @@ export const SIMPLIFY_LANES: SimplifyLane[] = [
 ];
 
 export const STRENGTHS: [string, string, string][] = [
-  ["01", "需求拆解", "把内容目标拆成 Prompt、参考素材与模板规则。"],
-  ["02", "多模态创作", "覆盖图片、动效、分镜、人物与品牌视觉延展。"],
+  ["01", "需求拆解", "把生产需求拆成 Prompt、参考素材与模板规则。"],
+  ["02", "多模态内容生产", "覆盖图片、动效、视频、人物与品牌视觉延展。"],
   ["03", "质量判断", "同时判断视觉完成度、业务有效性与平台适配。"],
   ["04", "流程搭建", "把快速试错沉淀为团队可复用的内容生产管线。"],
 ];
 
 export const AGENT_PAST = ["确认使用哪个工具", "整理并上传参考素材", "反复填写生成参数", "等待并检查结果", "手动进入下一环节"];
-export const AGENT_NOW = ["描述内容目标", "拆解画面与素材需求", "调用创作工具", "跟踪生成与失败恢复", "汇总可交付结果"];
+export const AGENT_NOW = ["描述生产需求", "拆解画面与素材要求", "调用生产工具", "跟踪生成与失败恢复", "汇总可交付结果"];
 export const AGENT_LOOP = ["目标拆解", "素材准备", "内容生成", "质量检查", "结果交付"];
 export const AGENT_PROTOCOL = ["能力清单", "输入输出", "状态反馈", "异常协议"];
 export const AGENT_TOOLS = ["图像生成", "素材管理", "动态生成", "任务中心"];
@@ -190,9 +190,9 @@ export const REPEAT_CASES: RepeatCase[] = [
 export const SCENE_ROLES: SceneRole[] = [
   {
     tag: "内容",
-    title: "把想法快速变成初稿",
+    title: "把内容需求快速变成初稿",
     extra: "脚本、分镜、标题与内容方向",
-    text: "先把创意目标拆成镜头、画面与素材要求，再用 AI 快速形成可讨论、可测试的内容初稿。",
+    text: "先把内容需求拆成镜头、画面与素材要求，再用 AI 快速形成可讨论、可测试的内容初稿。",
   },
   {
     tag: "美术",

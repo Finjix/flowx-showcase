@@ -15,7 +15,7 @@ export default function AgentSection() {
         <article className="agent-case reveal">
           <header className="agent-masthead">
             <span className="agent-kicker">CONTENT AUTOMATION · 内容生产协同</span>
-            <h2>从创意目标<em>到批量内容交付</em></h2>
+            <h2>从内容需求<em>到批量内容交付</em></h2>
             <p>按目标拆解步骤、调用图片与动态素材工具、跟踪状态和失败恢复，把多步制作收成一次任务。</p>
           </header>
 
@@ -28,10 +28,10 @@ export default function AgentSection() {
               </li>
             ))}
           </ol>
-          <p className="agent-now-foot">创意目标明确 · 跨工具自动化 · 结果可追踪</p>
+          <p className="agent-now-foot">生产需求明确 · 跨工具自动化 · 结果可追踪</p>
 
           <aside className="agent-past">
-            <span>过去 · 创作者手动串联工具</span>
+            <span>过去 · 制作人员手动串联工具</span>
             <div className="agent-past-loop">
               <ol className="agent-past-steps">
                 {AGENT_PAST.map((step) => <li key={step}>{step}</li>)}

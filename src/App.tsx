@@ -8,7 +8,7 @@ import MainCase from "./sections/MainCase";
 import { ContentTemplates, PortfolioClose, SelectedProjects } from "./sections/MoreWork";
 
 /**
- * 作品集根组件 — 组装各区块
+ * 项目展示根组件 — 组装各区块
  */
 export default function App() {
   const root = useReveal();

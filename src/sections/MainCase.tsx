@@ -34,7 +34,7 @@ export default function MainCase() {
         </div>
 
         <article className="chapter">
-          <ChapterHead eyebrow="创作挑战" title="创意、质量与交付，" highlight="不能只顾一头" />
+          <ChapterHead eyebrow="生产挑战" title="需求、质量与交付，" highlight="不能只顾一头" />
           <div className="pain-grid reveal">
             {PAINS.map((pain) => (
               <div className="pain-card" key={pain.no}>
@@ -66,12 +66,12 @@ export default function MainCase() {
           <div className="system-map-group">
             <div className="system-map reveal">
               <div className="system-inputs">
-                <span>内容目标</span><span>平台语境</span><span>参考素材</span><span>品牌与渠道规范</span>
+                <span>生产需求</span><span>平台语境</span><span>参考素材</span><span>品牌与渠道规范</span>
               </div>
               <div className="system-engine">
-                <div className="engine-title"><b>FLOWX 内容生产管线</b><span>把创意要求拆成模型可执行、团队可验收的生产标准</span></div>
+                <div className="engine-title"><b>FLOWX 内容生产管线</b><span>把内容需求拆成模型可执行、团队可验收的生产标准</span></div>
                 <div className="engine-layers">
-                  <div><span>拆解</span><b>需求与内容目标</b><small>受众、卖点、平台与规格</small></div>
+                  <div><span>拆解</span><b>需求与交付标准</b><small>受众、卖点、平台与规格</small></div>
                   <div><span>Prompt</span><b>结构化生成约束</b><small>风格、构图、角色与文案区</small></div>
                   <div><span>生成</span><b>多参考与 A/B</b><small>批量生成、单张重试</small></div>
                   <div><span>验收</span><b>质量与任务状态</b><small>人工质检、失败恢复、终稿交付</small></div>

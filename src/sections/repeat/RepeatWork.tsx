@@ -46,7 +46,7 @@ export default function RepeatWork() {
         ))}
       </div>
 
-      <p className="repeat-foot">把时长、尺寸、命名、画面与交付标准写进模板，让创作精力留给真正需要判断的部分。</p>
+      <p className="repeat-foot">把时长、尺寸、命名、画面与交付标准写进模板，让人工精力留给质量判断与关键调整。</p>
     </div>
   );
 }

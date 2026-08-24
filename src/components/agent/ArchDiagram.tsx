@@ -12,7 +12,7 @@ export default function ArchDiagram() {
         <div>
           <span className="arch-kicker">统一内容入口</span>
           <b>一次描述，替代跨工具串联</b>
-          <p>Agent 接收内容目标、参考素材与过程反馈，把分散操作收成单次任务。</p>
+          <p>Agent 接收生产需求、参考素材与过程反馈，把分散操作收成单次任务。</p>
         </div>
       </div>
 
@@ -20,7 +20,7 @@ export default function ArchDiagram() {
         <span className="arch-id">02</span>
         <div>
           <span className="arch-kicker">端到端内容闭环</span>
-          <b>从创意目标，到结果交付</b>
+          <b>从内容需求，到结果交付</b>
           <ol className="prod-steps">
             {AGENT_LOOP.map((step) => <li key={step}>{step}</li>)}
           </ol>
@@ -30,7 +30,7 @@ export default function ArchDiagram() {
       <div className="arch-lane">
         <span className="arch-id">03</span>
         <div>
-          <span className="arch-kicker">创作能力供给层</span>
+          <span className="arch-kicker">生产能力供给层</span>
           <b>统一接口，让图片、动态与素材工具可被调度</b>
           <p>标准协议：{AGENT_PROTOCOL.join(" · ")}</p>
           <div className="prod-tools">

@@ -19,7 +19,7 @@ export default function Guardrails() {
           <aside className="guard-side">
             <span>01 / REVIEW FLOW</span>
             <h3>内容验收流程</h3>
-            <p>先对齐创意目标，再逐层检查画面、内容与平台要求</p>
+            <p>先对齐生产需求，再逐层检查画面、内容与平台要求</p>
           </aside>
           <div className="guard-main">
             <ol className="guard-flow">

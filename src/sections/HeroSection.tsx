@@ -66,7 +66,7 @@ export default function HeroSection() {
       <section className="bg-sec" id="background">
         <div className="container bg-grid">
           <div className="bg-copy reveal">
-            <span className="bg-eyebrow">AI CONTENT CREATION</span>
+            <span className="bg-eyebrow">AI CONTENT PRODUCTION</span>
             <h2 className="bg-title">从单次生成，走向可复用的内容生产</h2>
             <div className="bg-body">
               <p>参与网易游戏 AI 内容工具平台建设，围绕图片、动效、视频与营销素材，把业务需求拆成 Prompt、素材规则和模板，并协同美术与运营完成可发布内容交付。</p>
