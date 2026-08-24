@@ -85,14 +85,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-spark { position: absolute; z-index: 5; color: rgba(220,245,229,.52); user-select: none; animation: twinkle 3.2s ease-in-out infinite; pointer-events: none; }.hero-spark.plus { font-size: 16px; }.hero-spark.star { color: rgba(23,226,153,.7); font-size: 11px; }
 .hero-positioning { margin: 0; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; color: rgba(223,229,224,.72); font-size: 12px; letter-spacing: .14em; }
 .hero-positioning i { width: 3px; height: 3px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px rgba(23,226,153,.8); }
-.hero-lunbo { position: relative; z-index: 6; width: 100vw; height: clamp(260px, 27vw, 330px); margin-top: 14px; margin-left: calc(50% - 50vw); overflow: hidden; perspective: 1200px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.hero-lunbo { position: relative; z-index: 6; width: 100vw; height: clamp(260px, 27vw, 330px); margin-top: 14px; margin-left: calc(50% - 50vw); overflow: hidden; perspective: 1400px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .hero-lunbo::before { content: ""; position: absolute; z-index: 0; left: 50%; top: 49%; width: clamp(500px, 72vw, 1040px); height: 126px; transform: translate(-50%, -50%) rotateX(66deg); border: 1px solid rgba(23,226,153,.12); border-radius: 50%; box-shadow: 0 0 34px rgba(23,226,153,.1), inset 0 0 34px rgba(23,226,153,.08); pointer-events: none; }
 .hero-lunbo-track { position: absolute; z-index: 1; left: 50%; top: 50%; width: 1px; height: 1px; transform-style: preserve-3d; transform: rotateY(0deg); animation: heroLunboOrbit 72s linear infinite; will-change: transform; }
-.hero-lunbo-card { --orbit-radius: clamp(290px, 31vw, 460px); position: absolute; left: 0; top: 0; width: clamp(190px, 20vw, 300px); aspect-ratio: 16 / 9; padding: 5px; overflow: hidden; transform: translate(-50%, -50%) rotateY(var(--card-angle)) translateZ(var(--orbit-radius)); transform-style: preserve-3d; backface-visibility: hidden; border: 1px solid rgba(177,255,220,.26); border-radius: 16px; background: linear-gradient(145deg, rgba(25,43,34,.82), rgba(4,10,7,.92)); box-shadow: 0 18px 42px rgba(0,0,0,.38), 0 0 28px rgba(23,226,153,.12), inset 0 1px 0 rgba(255,255,255,.14); transition: transform .45s ease, border-color .45s ease, box-shadow .45s ease; }
-.hero-lunbo-card::after { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(255,255,255,.1); border-radius: 11px; pointer-events: none; }
-.hero-lunbo-card img { display: block; width: 100%; height: 100%; border-radius: 11px; object-fit: cover; filter: saturate(.88) contrast(1.04); transition: transform .45s ease, filter .45s ease; }
-.hero-lunbo-card:hover { transform: translate(-50%, -50%) rotateY(var(--card-angle)) translateZ(calc(var(--orbit-radius) + 18px)) scale(1.03); border-color: rgba(23,226,153,.62); box-shadow: 0 24px 54px rgba(0,0,0,.48), 0 0 38px rgba(23,226,153,.2), inset 0 1px 0 rgba(255,255,255,.2); }
-.hero-lunbo-card:hover img { transform: scale(1.025); filter: saturate(1) contrast(1.05); }
+.hero-lunbo-card { --orbit-radius: clamp(250px, 36vw, 520px); position: absolute; left: 0; top: 0; width: clamp(190px, 18vw, 280px); aspect-ratio: 16 / 9; transform: translate(-50%, -50%) rotateY(var(--card-angle)) translateZ(var(--orbit-radius)); transform-style: preserve-3d; backface-visibility: hidden; }
+.hero-lunbo-card-face { position: relative; width: 100%; height: 100%; padding: 5px; overflow: hidden; border: 1px solid rgba(177,255,220,.26); border-radius: 16px; background: linear-gradient(145deg, rgba(25,43,34,.82), rgba(4,10,7,.92)); box-shadow: 0 18px 42px rgba(0,0,0,.38), 0 0 28px rgba(23,226,153,.12), inset 0 1px 0 rgba(255,255,255,.14); }
+.hero-lunbo-card-face::after { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(255,255,255,.1); border-radius: 11px; pointer-events: none; }
+.hero-lunbo-card-face img { display: block; width: 100%; height: 100%; border-radius: 11px; object-fit: cover; filter: saturate(.88) contrast(1.04); transition: transform .45s ease, filter .45s ease; }
+.hero-lunbo-card:hover .hero-lunbo-card-face { transform: scale(1.03) translateY(-8px); border-color: rgba(23,226,153,.62); box-shadow: 0 24px 54px rgba(0,0,0,.48), 0 0 38px rgba(23,226,153,.2), inset 0 1px 0 rgba(255,255,255,.2); }
+.hero-lunbo-card:hover .hero-lunbo-card-face img { transform: scale(1.025); filter: saturate(1) contrast(1.05); }
 .hero-scroll-cue { position: absolute; z-index: 7; left: 50%; bottom: clamp(28px, 6vh, 64px); display: grid; place-items: center; width: 48px; height: 48px; transform: translateX(-50%); color: rgba(206,255,231,.86); border: 1px solid rgba(177,255,220,.38); border-radius: 50%; background: radial-gradient(circle at 50% 38%, rgba(23,226,153,.12), rgba(4,10,7,.28) 68%); box-shadow: 0 0 24px rgba(23,226,153,.2), inset 0 0 0 5px rgba(23,226,153,.025), inset 0 0 18px rgba(23,226,153,.1); filter: drop-shadow(0 0 12px rgba(23,226,153,.28)); animation: scrollCueFloat 2.4s ease-in-out infinite; transition: color .3s ease, border-color .3s ease, box-shadow .3s ease; }
 .hero-scroll-cue-icon { position: relative; width: 26px; height: 26px; overflow: visible; }
 .hero-scroll-cue-icon path { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
@@ -393,9 +394,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-positioning { max-width: 330px; gap: 8px; font-size: 10px; letter-spacing: .08em; }
   .hero-lunbo { height: 270px; }
   .hero-lunbo-track { animation-duration: 82s; }
-  .hero-lunbo-card { --orbit-radius: 290px; width: min(58vw, 230px); padding: 4px; border-radius: 14px; }
-  .hero-lunbo-card::after { inset: 4px; border-radius: 10px; }
-  .hero-lunbo-card img { border-radius: 10px; }
+  .hero-lunbo-card { --orbit-radius: 250px; width: min(48vw, 190px); }
+  .hero-lunbo-card-face { padding: 4px; border-radius: 14px; }
+  .hero-lunbo-card-face::after { inset: 4px; border-radius: 10px; }
+  .hero-lunbo-card-face img { border-radius: 10px; }
   .bg-sec { padding: 96px 0; }.bg-title { font-size: 30px; }.bg-facts { grid-template-columns: 1fr; }.bg-facts > div { min-height: auto; gap: 7px; }.bg-facts > div + div { border-left: 0; border-top: 1px solid var(--line-soft); }
   .case-cover { padding-bottom: 64px; }
   .case-result { grid-template-columns: repeat(2,1fr); }.case-res { min-height: 126px; padding: 20px; }.case-title { font-size: 40px; }
@@ -418,6 +420,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .hero-lunbo-track { animation: none; transform: rotateY(0deg); }
+  .hero-lunbo-track { animation: none; }
   .hero-scroll-cue { animation: none; }
 }
