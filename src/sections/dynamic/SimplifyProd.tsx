@@ -2,15 +2,15 @@ import { SIMPLIFY_LANES } from "../../data/content";
 import "./simplify.css";
 
 /**
- * 动态生成 — 化繁为简升级生产方式（无工作台截图版）
+ * 动态生成 — 将内容规范沉淀为可复用模板
  */
 export default function SimplifyProd() {
   return (
     <div className="simplify reveal">
       <header className="simplify-head">
-        <span>生产方式</span>
-        <h3>化繁为简，升级生产方式</h3>
-        <p>朝着可交付、可运维的应用系统下沉</p>
+        <span>CONTENT TEMPLATE</span>
+        <h3>从生产需求到可复用模板</h3>
+        <p>把时长、帧率、码率、版式与导出规格写进生产流程</p>
       </header>
 
       <p className="simplify-case">KV 动态循环动画 · 为例</p>
@@ -25,13 +25,13 @@ export default function SimplifyProd() {
       </div>
 
       <p className="simplify-bridge">
-        <strong>使用门槛降低</strong>——功能便捷的背后，是把内部业务交付标准吃透（封装时长、帧数、码率…参数），将 SOP 封装为自动化流程运转
+        <strong>稳定交付来自明确标准</strong>——将时长、帧数、码率和版式等内部规范封装为模板，减少重复调参与人工检查。
       </p>
 
       <div className="simplify-impact">
         <article>
-          <span>角色扩展 · 用户增长</span>
-          <p>美术专业人员 <i>→</i> 非美术专业人员（导演、运营人员…）</p>
+          <span>协作方式变化</span>
+          <p>美术定义质量与模板 <i>→</i> 内容、导演与运营按标准快速产出</p>
         </article>
       </div>
     </div>

@@ -5,21 +5,21 @@ import { assetPath } from "../../utils/assetPath";
 import "./agent.css";
 
 /**
- * Agent 案例条 — 一句任务、一条路径，再展开生产架构
+ * 内容生产自动化 — 一句任务、一条路径，再展开生产架构
  */
 export default function AgentSection() {
   return (
     <section className="agent section-pad" id="agent">
-      <div className="agent-watermark" aria-hidden="true">AGENT</div>
+      <div className="agent-watermark" aria-hidden="true">FLOW</div>
       <div className="container">
         <article className="agent-case reveal">
           <header className="agent-masthead">
-            <span className="agent-kicker">Agent 价值</span>
-            <h2>将跨工具操作<em>压缩为单次输入</em></h2>
-            <p>自动选工具、串流程、盯状态，把多步操作收敛成一次交付</p>
+            <span className="agent-kicker">CONTENT AUTOMATION · 内容生产协同</span>
+            <h2>从内容需求<em>到批量内容交付</em></h2>
+            <p>按目标拆解步骤、调用图片与动态素材工具、跟踪状态和失败恢复，把多步制作收成一次任务。</p>
           </header>
 
-          <p className="agent-now-label">现在 · Agent 编排任务</p>
+          <p className="agent-now-label">现在 · 自动编排内容任务</p>
           <ol className="agent-rail">
             {AGENT_NOW.map((step, index) => (
               <li key={step}>
@@ -28,10 +28,10 @@ export default function AgentSection() {
               </li>
             ))}
           </ol>
-          <p className="agent-now-foot">跨步骤自动化 · 批量产出</p>
+          <p className="agent-now-foot">生产需求明确 · 跨工具自动化 · 结果可追踪</p>
 
           <aside className="agent-past">
-            <span>过去 · 用户编排工具</span>
+            <span>过去 · 制作人员手动串联工具</span>
             <div className="agent-past-loop">
               <ol className="agent-past-steps">
                 {AGENT_PAST.map((step) => <li key={step}>{step}</li>)}
@@ -47,9 +47,9 @@ export default function AgentSection() {
 
         <article className="agent-arch reveal">
           <header className="agent-masthead compact">
-            <span className="agent-kicker">多模态资源生产 Agent</span>
-            <h2>从人操作工具<em>到 AI 编排供给</em></h2>
-            <p>把任务拆解、工具调用、状态反馈、异常处理与结果交付，收成统一任务入口</p>
+            <span className="agent-kicker">多模态内容生产 Agent</span>
+            <h2>从手动串工具<em>到 AI 编排内容生产</em></h2>
+            <p>把任务拆解、工具调用、状态反馈、异常处理与结果交付，收成统一内容入口。</p>
           </header>
           <ArchDiagram />
         </article>

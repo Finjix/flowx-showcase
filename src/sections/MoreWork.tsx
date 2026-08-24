@@ -4,79 +4,92 @@ import { DYNAMIC_GIF_COLS, PROJECTS, STRENGTHS } from "../data/content";
 import { assetPath } from "../utils/assetPath";
 import SceneFuture from "./SceneFuture";
 
-/**
- * 副案例、项目集、关于我与页脚
- */
-export default function MoreWork() {
+/** 图像、视频与内容生产模块展示 */
+export function SelectedProjects() {
   return (
-    <>
-      <section className="sub-cases section-pad" id="sub-cases">
-        <div className="container">
-          <div className="section-kicker sub-kicker reveal"><span>SUB CASES · 02–03</span><b>效率能力与资产底座</b></div>
-
-          <article className="split-case reveal">
-            <div className="split-copy">
-              <span className="eyebrow">SUB CASE 02 · 动态生成</span>
-              <h2>动态素材<br /><span>分钟级批量输出</span></h2>
-              <p>AE 逐张套版十几分钟；模板参数化后，分钟级批量导出多规格 GIF。</p>
-              <div className="mini-compare">
-                <div className="old"><span>过去</span><b>10+ 分钟 / 张</b><small>手动改模板、逐个导出</small></div>
-                <div className="new"><span>现在</span><b>分钟级 / 批量</b><small>多规格 GIF 一键导出</small></div>
+    <section className="projects section-pad" id="projects">
+      <div className="projects-glow" />
+      <div className="container">
+        <div className="section-kicker project-kicker reveal"><span>SELECTED AI MODULES</span></div>
+        <header className="project-intro reveal">
+          <h2>先看模块，<em>再看提效方法</em></h2>
+          <p>覆盖从需求拆解、视觉生成到内容修正与成品输出，既关注画面质量，也关注内容能否进入真实生产。</p>
+        </header>
+        <div className="project-grid">
+          {PROJECTS.map((project, index) => (
+            <article className={`project-card reveal${index < 2 ? " project-card--featured" : ""}`} key={project.no}>
+              <Placeholder title={project.title} src={project.image} />
+              <div className="project-body">
+                <span className="project-no">CONTENT / {project.no}</span>
+                <h3>{project.title}</h3><p>{project.desc}</p>
+                <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
               </div>
-              <div className="case-tags"><span>模板参数化</span><span>批量任务</span><span>多规格导出</span></div>
-            </div>
-            <Placeholder title="动态生成图片集合包" ratio="tall" src={assetPath("image/图片集合包.webp")} />
-          </article>
-
-          <SimplifyProd />
-
-          <div className="anim-showcase reveal">
-            <div className="anim-row main">
-              {DYNAMIC_GIF_COLS.map((col, colIndex) => (
-                <div className={col.length > 1 ? "anim-stack" : undefined} key={colIndex}>
-                  {col.map((src, index) => (
-                    <img key={src} src={src} alt={`动态生成案例 ${colIndex + 1}-${index + 1}`} />
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <article className="split-case reverse reveal">
-            <Placeholder title="素材管理界面" note="建议替换：角色、渠道骨架、字效资产库" ratio="tall" src={assetPath("image/资产库.webp")} />
-            <div className="split-copy">
-              <span className="eyebrow">SUB CASE 03 · 素材管理</span>
-              <h2>把素材变成<br /><span>可复用资产</span></h2>
-              <p>角色、骨架、字效与品牌资产，一次沉淀，跨模块复用。</p>
-              <div className="reuse-stat"><strong>70%+</strong><span>核心资产复用率</span></div>
-              <div className="asset-route"><span>一次沉淀</span><i>→</i><span>跨模块调用</span><i>→</i><span>持续复用</span></div>
-              <div className="case-tags"><span>统一资产库</span><span>跨模块调用</span><span>权限与版本</span></div>
-            </div>
-          </article>
+            </article>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="projects section-pad" id="projects">
-        <div className="container">
-          <div className="section-kicker project-kicker reveal"><span>SELECTED PROJECTS</span><b>项目集简介</b></div>
-          <div className="project-grid">
-            {PROJECTS.map((project) => (
-              <article className="project-card reveal" key={project.no}>
-                <Placeholder title={project.title} note="项目截图占位" src={project.image} />
-                <div className="project-body">
-                  <span className="project-no">PROJECT / {project.no}</span>
-                  <h3>{project.title}</h3><p>{project.desc}</p>
-                  <div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                </div>
-              </article>
+/** 动态内容模板与素材资产案例 */
+export function ContentTemplates() {
+  return (
+    <section className="sub-cases section-pad" id="sub-cases">
+      <div className="container">
+        <div className="section-kicker sub-kicker reveal"><span>TEMPLATES & ASSETS</span><b>让单次制作成为可复用的生产流程</b></div>
+
+        <article className="split-case reveal">
+          <div className="split-copy">
+            <span className="eyebrow">CONTENT CASE · 动态素材模板</span>
+            <h2>把 KV 变成<br /><span>多规格动态内容</span></h2>
+            <p>将时长、帧率、码率、版式和导出规格参数化，分钟级批量输出可直接交付的 GIF。</p>
+            <div className="mini-compare">
+              <div className="old"><span>过去</span><b>10+ 分钟 / 张</b><small>手动改模板、逐个导出</small></div>
+              <div className="new"><span>现在</span><b>分钟级 / 批量</b><small>按模板一次输出多规格</small></div>
+            </div>
+            <div className="case-tags"><span>模板参数化</span><span>画面规格</span><span>批量导出</span></div>
+          </div>
+          <Placeholder title="动态生成图片集合包" ratio="tall" src={assetPath("image/图片集合包.webp")} />
+        </article>
+
+        <SimplifyProd />
+
+        <div className="anim-showcase reveal">
+          <div className="anim-row main">
+            {DYNAMIC_GIF_COLS.map((col, colIndex) => (
+              <div className={col.length > 1 ? "anim-stack" : undefined} key={colIndex}>
+                {col.map((src, index) => (
+                  <img key={src} src={src} alt={`动态生成案例 ${colIndex + 1}-${index + 1}`} />
+                ))}
+              </div>
             ))}
           </div>
         </div>
-      </section>
 
+        <article className="split-case reverse reveal">
+          <Placeholder title="素材管理界面" ratio="tall" src={assetPath("image/资产库.webp")} />
+          <div className="split-copy">
+            <span className="eyebrow">CONTENT CASE · 素材与模板库</span>
+            <h2>把参考素材变成<br /><span>可复用内容资产</span></h2>
+            <p>角色、渠道骨架、字效与品牌素材一次沉淀，在图片、动态和营销内容中持续复用。</p>
+            <div className="reuse-stat"><strong>70%+</strong><span>核心资产复用率</span></div>
+            <div className="asset-route"><span>素材沉淀</span><i>→</i><span>模板调用</span><i>→</i><span>跨内容复用</span></div>
+            <div className="case-tags"><span>统一素材库</span><span>内容模板</span><span>版本管理</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  );
+}
+
+/** 个人能力、协作场景与结尾 */
+export function PortfolioClose() {
+  return (
+    <>
       <section className="strengths section-pad" id="about">
         <div className="container">
-          <div className="section-kicker about-kicker reveal"><span>VALUE</span><b>我能为团队带来的价值</b></div>
+          <div className="section-kicker about-kicker reveal"><span>PRODUCTION VALUE</span><b>我能为内容生产团队带来的能力</b></div>
           <div className="strength-grid">
             {STRENGTHS.map(([no, title, desc]) => (
               <div className="strength-card reveal" key={no}><span>{no}</span><h3>{title}</h3><p>{desc}</p></div>
@@ -90,8 +103,8 @@ export default function MoreWork() {
       <footer className="footer section-pad">
         <div className="footer-glow" />
         <div className="container footer-inner reveal">
-          <h2>让 AI 效率<br /><em>融入生产系统</em></h2>
-          <div className="footer-bottom"><span>钟丰骏项目作品</span><span>FLOWX / 2026</span></div>
+          <h2>让内容需求更快变成<br /><em>可交付的成品</em></h2>
+          <div className="footer-bottom"><span>钟丰骏 · 项目作品</span><span>FLOWX / 2026</span></div>
         </div>
       </footer>
     </>

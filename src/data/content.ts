@@ -64,14 +64,12 @@ export interface SceneRole {
 }
 
 export const NAV: NavItem[] = [
-  { href: "#background", label: "项目背景" },
-  { href: "#main-case", label: "旗舰项目" },
-  { href: "#method", label: "方法" },
-  { href: "#agent", label: "Agent" },
-  { href: "#sub-cases", label: "副案例" },
-  { href: "#projects", label: "项目集" },
-  { href: "#about", label: "关于我" },
-  { href: "#scene", label: "场景" },
+  { href: "#projects", label: "模块精选" },
+  { href: "#main-case", label: "代表案例" },
+  { href: "#sub-cases", label: "模板与资产" },
+  { href: "#method", label: "质量方法" },
+  { href: "#agent", label: "生产自动化" },
+  { href: "#about", label: "能力" },
 ];
 
 export const CASE_RESULT: StatItem[] = [
@@ -82,24 +80,24 @@ export const CASE_RESULT: StatItem[] = [
 ];
 
 export const PAINS: PainItem[] = [
-  { no: "01", title: "单张数小时", text: "质量与产量无法兼得", tag: "产能" },
-  { no: "02", title: "切图慢、质量低", text: "渠道越多，多样性越差", tag: "质量" },
-  { no: "03", title: "跨部门反复对齐", text: "运营提要求，设计师逐张执行", tag: "协作" },
+  { no: "01", title: "生产需求分散", text: "角色、卖点与渠道规范依赖人工转译", tag: "需求" },
+  { no: "02", title: "生成结果不稳定", text: "构图、角色、风格和文案区难同时达标", tag: "质量" },
+  { no: "03", title: "渠道版本繁多", text: "批量适配、重试与终稿整理消耗大量时间", tag: "交付" },
 ];
 
-export const OLD_FLOW = ["运营提需求", "设计转译", "逐渠道制作", "反复返工"];
-export const NEW_FLOW = ["规则配置", "自动匹配", "资产整合", "成品交付"];
+export const OLD_FLOW = ["内容策划", "人工找素材", "反复写提示词", "逐张验收调整"];
+export const NEW_FLOW = ["需求拆解", "Prompt / 模板组合", "批量生成", "人工质检交付"];
 
 export const HUMAN_COMPARE: [string, string, string][] = [
-  ["协作", "运营 ↔ 设计反复对齐", "运营配置，系统执行"],
-  ["生产", "逐张制作", "分钟级批量交付"],
-  ["扩产", "加人、加班", "复制规则"],
+  ["协作", "策划、美术反复口头对齐", "目标、素材与标准结构化"],
+  ["生产", "逐张制作与人工适配", "模板组合与批量生成"],
+  ["迭代", "问题出现后从头重做", "单张重试、A/B 与历史恢复"],
 ];
 
 export const AI_COMPARE: [string, string, string][] = [
-  ["输入", "提示词", "企业资产 + 渠道 + 业务规则"],
-  ["输出", "质量波动的半成品", "可投放成品"],
-  ["复用", "每次重来", "跨公司 / 行业配置复用"],
+  ["输入", "一句需求 + 零散素材", "结构化 Prompt + 参考素材 + 渠道规范"],
+  ["输出", "质量波动的可看初稿", "经过质检的可投放内容"],
+  ["复用", "每次从零试错", "Prompt、模板与素材资产复用"],
 ];
 
 export const MAIN_RESULTS: StatItem[] = [
@@ -112,14 +110,14 @@ export const MAIN_RESULTS: StatItem[] = [
 ];
 
 export const PROJECTS: ProjectItem[] = [
-  { no: "01", title: "AI 分镜助手", desc: "智能拆解脚本，自由参数控制", tags: ["AI 分镜", "视频生成", "异步任务"], image: assetPath("image/分镜.webp") },
-  { no: "02", title: "H5 组件生成", desc: "多样性组件产出", tags: ["生成即成品", "布局匹配", "风格跟随"], image: assetPath("image/H5.webp") },
-  { no: "03", title: "可视化节点画布", desc: "一整条创作，装进一块画布", tags: ["节点编排", "状态持久化", "工作流"], image: assetPath("image/无限画布.webp") },
-  { no: "04", title: "智能扩图与局部重绘", desc: "扩图与重绘，像素级可控", tags: ["Inpaint", "Mask", "任务恢复"], image: assetPath("image/智能扩图.webp") },
-  { no: "05", title: "角色三视图生成", desc: "一键批量生成，三视图一次出齐", tags: ["一致性", "批量生成", "失败兜底"], image: assetPath("image/角色三视图.webp") },
-  { no: "06", title: "Logo 创作模块", desc: "内置六大风格模板，一次完成品牌延展", tags: ["配套延展", "多尺寸", "多模型"], image: assetPath("image/logo.webp") },
-  { no: "07", title: "模板替换", desc: "一套模板，出一整批成品", tags: ["智能匹配", "批量成品", "规格输出"], image: assetPath("image/模板替换.webp") },
-  { no: "08", title: "智能定妆照", desc: "内置定妆照生成、定妆照三视图、人像换衣等多张板块", tags: ["质感保留", "批量处理", "肤色矫正"], image: assetPath("image/定妆照.webp") },
+  { no: "01", title: "AI 分镜助手", desc: "从脚本拆解到分镜初稿，控制画面、镜头与节奏。", tags: ["脚本拆解", "画面构成", "视频前期"], image: assetPath("image/分镜.webp") },
+  { no: "02", title: "智能扩图与局部重绘", desc: "围绕构图和主体关系完成扩图、重绘与细节修正。", tags: ["构图控制", "局部重绘", "迭代修正"], image: assetPath("image/智能扩图.webp") },
+  { no: "03", title: "角色三视图生成", desc: "用参考图与结构约束批量生成一致的角色视图。", tags: ["角色一致性", "多视角", "批量生成"], image: assetPath("image/角色三视图.webp") },
+  { no: "04", title: "Logo 生成与延展", desc: "从六类视觉方向快速生成 Logo 与配套品牌延展。", tags: ["风格探索", "品牌延展", "多尺寸"], image: assetPath("image/logo.webp") },
+  { no: "05", title: "H5 组件生成", desc: "依据 KV 与内容层级生成可落地的长图与组件方案。", tags: ["版式生成", "风格跟随", "成品输出"], image: assetPath("image/H5.webp") },
+  { no: "06", title: "智能定妆照", desc: "围绕人物质感、服装与肤色进行批量生成和修正。", tags: ["质感保留", "人物处理", "批量交付"], image: assetPath("image/定妆照.webp") },
+  { no: "07", title: "模板替换", desc: "将版式与素材规则沉淀为模板，批量产出渠道成品。", tags: ["内容模板", "素材适配", "规格输出"], image: assetPath("image/模板替换.webp") },
+  { no: "08", title: "可视化节点画布", desc: "把多步内容生成、调整与组合集中在统一流程画布。", tags: ["生产流程", "节点编排", "多步生成"], image: assetPath("image/无限画布.webp") },
 ];
 
 export const DYNAMIC_GIF_COLS: string[][] = [
@@ -135,34 +133,34 @@ export const SIMPLIFY_LANES: SimplifyLane[] = [
 ];
 
 export const STRENGTHS: [string, string, string][] = [
-  ["01", "业务问题抽象", "把隐性经验，转成可配置规则。"],
-  ["02", "AI 机制设计", "为模型设计路由、验收、兜底与恢复。"],
-  ["03", "复杂流程产品化", "把多角色、多工具收敛成一条任务路径。"],
-  ["04", "跨团队落地", "拉通运营、美术与研发，持续交付。"],
+  ["01", "需求拆解", "把生产需求拆成 Prompt、参考素材与模板规则。"],
+  ["02", "多模态内容生产", "覆盖图片、动效、视频、人物与品牌视觉延展。"],
+  ["03", "质量判断", "同时判断视觉完成度、业务有效性与平台适配。"],
+  ["04", "流程搭建", "把快速试错沉淀为团队可复用的内容生产管线。"],
 ];
 
-export const AGENT_PAST = ["找到正确模块", "理解并填写参数", "上传与引用素材", "等待并检查状态", "手动进入下一步"];
-export const AGENT_NOW = ["描述批量目标", "自动拆解步骤", "批量调用工具", "跟踪与失败恢复", "交付完整结果"];
-export const AGENT_LOOP = ["任务拆解", "工具调用", "状态反馈", "异常处理", "结果交付"];
+export const AGENT_PAST = ["确认使用哪个工具", "整理并上传参考素材", "反复填写生成参数", "等待并检查结果", "手动进入下一环节"];
+export const AGENT_NOW = ["描述生产需求", "拆解画面与素材要求", "调用生产工具", "跟踪生成与失败恢复", "汇总可交付结果"];
+export const AGENT_LOOP = ["目标拆解", "素材准备", "内容生成", "质量检查", "结果交付"];
 export const AGENT_PROTOCOL = ["能力清单", "输入输出", "状态反馈", "异常协议"];
-export const AGENT_TOOLS = ["资源生成", "素材管理", "动态生成", "任务中心"];
+export const AGENT_TOOLS = ["图像生成", "素材管理", "动态生成", "任务中心"];
 
 export const GUARD_STEPS: GuardStep[] = [
-  { no: "01", title: "真实痛点", text: "一线生产和真实反馈" },
-  { no: "02", title: "值不值得做", text: "频次 × 收益，对照投入 × 风险" },
-  { no: "03", title: "按标准验收", text: "对照交付标准逐项过" },
-  { no: "04", title: "用数据复盘", text: "用量、失败、反馈，驱动下一轮" },
+  { no: "01", title: "需求对齐", text: "明确受众、目标、平台与内容形态" },
+  { no: "02", title: "画面验收", text: "检查构图、主体、细节与风格一致性" },
+  { no: "03", title: "内容验收", text: "确认卖点、文案区和渠道规范可用" },
+  { no: "04", title: "快速迭代", text: "用 A/B、反馈和复用数据推进下一轮" },
 ];
 
 export const GUARD_ROUTES: GuardRoute[] = [
-  { tag: "确定性任务", title: "优先工具", text: "切图、压缩、命名、分组、多规格导出" },
-  { tag: "生成性任务", title: "调用模型", text: "选题、风格、角色与画面；人留验收" },
-  { tag: "低频或已成熟", title: "接入或不做", text: "市场已有、或用量低投入大的，不重复建设" },
-  { tag: "成本判断", title: "把额度花在生成上", text: "一次调用不贵，重试和人工返工才贵" },
+  { tag: "好不好看", title: "视觉完成度", text: "主体清晰、构图稳定、细节经得起放大查看" },
+  { tag: "像不像同一套", title: "内容一致性", text: "角色、品牌与参考风格在不同版本中保持连续" },
+  { tag: "能不能发布", title: "业务有效性", text: "卖点清楚、文案区可用，并符合对应平台语境" },
+  { tag: "能不能再用", title: "资产复用性", text: "有效的 Prompt、模板和参考素材进入团队资产库" },
 ];
 
-export const REPEAT_OLD = ["需求方提单", "等待排期", "人工处理", "交付"];
-export const REPEAT_NEW = ["选业务场景", "上传素材自动处理", "交付"];
+export const REPEAT_OLD = ["需求方提单", "等待排期", "人工制作", "逐项交付"];
+export const REPEAT_NEW = ["选择内容模板", "上传参考素材", "自动处理", "质检交付"];
 export const REPEAT_CASES: RepeatCase[] = [
   {
     title: "选手定妆照",
@@ -191,21 +189,21 @@ export const REPEAT_CASES: RepeatCase[] = [
 
 export const SCENE_ROLES: SceneRole[] = [
   {
-    tag: "运营",
-    title: "快速出素材",
-    extra: "活动图、动图、多渠道规格",
-    text: "固定、批量的需求交给模板替换与批量出图，一句话或一套配置搞定，不再逐张等美术排期",
+    tag: "内容",
+    title: "把内容需求快速变成初稿",
+    extra: "脚本、分镜、标题与内容方向",
+    text: "先把内容需求拆成镜头、画面与素材要求，再用 AI 快速形成可讨论、可测试的内容初稿。",
   },
   {
     tag: "美术",
-    title: "高频素材处理与创作",
-    extra: "三视图、扩图、肤色矫正、无限画布",
-    text: "重复的处理交给工具批量做，把精力留给创作；多步产出在无限画布上编排成完整作品",
+    title: "控制质量与视觉一致性",
+    extra: "三视图、扩图、人物修正与品牌延展",
+    text: "用参考图、结构约束和人工验收稳定画面质量，把重复处理交给模板与工具批量完成。",
   },
   {
-    tag: "内容",
-    title: "从图到片到配音的成片链路",
-    extra: "分镜、视频生成、音频",
-    text: "分镜到成片一条链路批量完成，内容制作环节全链路打通",
+    tag: "运营",
+    title: "快速适配渠道并验证效果",
+    extra: "活动图、动态素材与多渠道规格",
+    text: "通过模板替换、批量生成和规格化导出快速获得多版本素材，再用反馈推动下一轮优化。",
   },
 ];

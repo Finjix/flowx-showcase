@@ -3,27 +3,27 @@ import { REPEAT_CASES, REPEAT_NEW, REPEAT_OLD } from "../../data/content";
 import "./repeat.css";
 
 /**
- * 方法页下半 — 重复活交给 AI 实战案例
+ * 方法页下半 — 把重复制作沉淀为模板与自动化流程
  */
 export default function RepeatWork() {
   return (
     <div className="repeat reveal">
       <header className="repeat-head">
-        <h3>重复活交给 AI</h3>
+        <h3>把重复制作沉淀为模板</h3>
       </header>
 
       <div className="repeat-compare">
         <div className="repeat-lane old">
-          <b>传统流程</b>
+          <b>过去 · 人工逐项制作</b>
           <p>{REPEAT_OLD.join(" → ")}</p>
         </div>
         <div className="repeat-shift">
-          <span>持续优化</span>
+          <span>沉淀标准</span>
           <i>→</i>
-          <small>迭代管线</small>
+          <small>复用模板</small>
         </div>
         <div className="repeat-lane now">
-          <b>AI 助力</b>
+          <b>现在 · 内容生产管线</b>
           <p>FlowX {REPEAT_NEW.join(" → ")}</p>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default function RepeatWork() {
         ))}
       </div>
 
-      <p className="repeat-foot">可规格化、可验收、反复出现的任务，不应承担跨部门协调沟通成本</p>
+      <p className="repeat-foot">把时长、尺寸、命名、画面与交付标准写进模板，让人工精力留给质量判断与关键调整。</p>
     </div>
   );
 }

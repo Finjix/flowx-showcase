@@ -33,14 +33,15 @@ export default function HeroSection() {
         <div className="hero-inner">
           <h1 className="hero-title">
             <span className="line serif-italic scribble">
-              打通 AI 到
+              AI 赋能
               <svg className="ellipse" viewBox="0 0 320 130" aria-hidden="true" preserveAspectRatio="none">
                 <ellipse cx="160" cy="65" rx="150" ry="47" />
               </svg>
               <span className="scribble-sparks">✦<span className="s2">✦</span></span>
             </span>
-            <span className="line bold">业务的最后一公里</span>
+            <span className="line bold">提效内容生产</span>
           </h1>
+          <p className="hero-positioning">图像 <i /> 视频 <i /> 模板 <i /> 内容生产管线</p>
           <div className="hero-lunbo" role="region" aria-label="FlowX 案例图片展示">
             <div className="hero-lunbo-track">
               {HERO_SHOWCASE_IMAGES.map((image, index) => (
@@ -65,9 +66,10 @@ export default function HeroSection() {
       <section className="bg-sec" id="background">
         <div className="container bg-grid">
           <div className="bg-copy reveal">
-            <h2 className="bg-title">从定制走向规模化供给</h2>
+            <span className="bg-eyebrow">AI CONTENT PRODUCTION</span>
+            <h2 className="bg-title">从单次生成，走向可复用的内容生产</h2>
             <div className="bg-body">
-              <p>参与网易游戏 AI 应用平台建设，负责游戏营销素材自动化</p>
+              <p>参与网易游戏 AI 内容工具平台建设，围绕图片、动效、视频与营销素材，把业务需求拆成 Prompt、素材规则和模板，并协同美术与运营完成可发布内容交付。</p>
             </div>
             <div className="platform-metrics">
               <div><strong>30,000+</strong><span>平台累计 AI 调用</span></div>
@@ -79,7 +81,7 @@ export default function HeroSection() {
               <div className="shot3d-glow" />
               <div className="shot3d-frame"><img src={assetPath("image/platform-home.webp")} alt="FlowX 内容制作中心首页" /></div>
               <div className="shot3d-shadow" />
-              <figcaption>内容制作中心 · AI 应用平台 <span>V1.5.0</span></figcaption>
+              <figcaption>内容制作中心 · AI 内容工具平台 <span>V1.5.0</span></figcaption>
             </figure>
           </div>
         </div>
