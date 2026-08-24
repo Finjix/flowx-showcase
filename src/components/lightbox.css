@@ -25,6 +25,7 @@
   max-height: 88vh;
   cursor: default;
   animation: lb-zoom 0.32s cubic-bezier(0.2, 0.7, 0.3, 1);
+  overflow: visible;
 }
 .lightbox.closing .lightbox-stage {
   animation: lb-zoom-out 0.22s ease forwards;
@@ -38,6 +39,16 @@
   border-radius: 8px;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.65);
   user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+  transform-origin: center;
+  transition: transform 0.12s ease-out;
+  will-change: transform;
+  touch-action: none;
+}
+.lightbox-stage img.is-dragging {
+  cursor: grabbing;
+  transition: none;
 }
 
 .lightbox-close,
@@ -94,6 +105,17 @@
   font-size: 13px;
   letter-spacing: 0.08em;
   font-variant-numeric: tabular-nums;
+}
+
+.lightbox-zoom {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  pointer-events: none;
 }
 
 .lightbox-caption {

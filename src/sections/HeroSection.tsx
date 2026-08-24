@@ -3,13 +3,15 @@ import { assetPath } from "../utils/assetPath";
 import type { CSSProperties } from "react";
 
 const HERO_SHOWCASE_IMAGES = [
-  { src: "image/lunbo/动效制作.webp", alt: "动态素材生成案例" },
-  { src: "image/lunbo/分镜助手2.webp", alt: "AI 分镜助手案例" },
-  { src: "image/lunbo/首页2.webp", alt: "FlowX 平台首页案例" },
-  { src: "image/lunbo/无限画布.webp", alt: "无限画布案例" },
-  { src: "image/lunbo/字体设计.webp", alt: "字体设计案例" },
   { src: "image/lunbo/h5长图.webp", alt: "H5 长图案例" },
   { src: "image/lunbo/logo大师1.webp", alt: "Logo 大师案例" },
+  { src: "image/lunbo/字体设计.webp", alt: "字体设计案例" },
+  { src: "image/lunbo/动效制作.webp", alt: "动态素材生成案例" },
+];
+
+const HERO_SHOWCASE_CARDS = [
+  ...HERO_SHOWCASE_IMAGES.map((image) => ({ ...image, clone: false })),
+  ...HERO_SHOWCASE_IMAGES.map((image) => ({ ...image, clone: true })),
 ];
 
 /**
@@ -44,13 +46,20 @@ export default function HeroSection() {
           <p className="hero-positioning">图像 <i /> 视频 <i /> 模板 <i /> 内容生产管线</p>
           <div className="hero-lunbo" role="region" aria-label="FlowX 案例图片展示">
             <div className="hero-lunbo-track">
-              {HERO_SHOWCASE_IMAGES.map((image, index) => (
+              {HERO_SHOWCASE_CARDS.map((image, index) => (
                 <div
                   className="hero-lunbo-card"
-                  key={image.src}
-                  style={{ "--card-angle": `${(360 / HERO_SHOWCASE_IMAGES.length) * index}deg` } as CSSProperties}
+                  key={`${image.src}-${index}`}
+                  aria-hidden={image.clone}
+                  style={{ "--card-angle": `${(360 / HERO_SHOWCASE_CARDS.length) * index}deg` } as CSSProperties}
                 >
-                  <img src={assetPath(image.src)} alt={image.alt} />
+                  <div className="hero-lunbo-card-face">
+                    <img
+                      src={assetPath(image.src)}
+                      alt={image.alt}
+                      data-lightbox-ignore={image.clone ? "true" : undefined}
+                    />
+                  </div>
                 </div>
               ))}
             </div>
